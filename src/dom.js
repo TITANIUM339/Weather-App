@@ -74,9 +74,9 @@ const displayController = (() => {
             case 1192:
             case 1189:
                 return "cloud-rain-fill";
+            case 1246:
             case 1195:
                 return "cloud-rain-heavy-fill";
-            case 1246:
             case 1117:
             case 1225:
                 return "snow";
