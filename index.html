@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <link
+            rel="icon"
+            href="../node_modules/bootstrap-icons/icons/cloud-haze2-fill.svg"
+        />
+        <script defer src="./main.js"></script>
+        <title>Weather App</title>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="#">
+                    <svg class="bi" width="64" height="64" fill="currentColor">
+                        <use
+                            xlink:href="../node_modules/bootstrap-icons/bootstrap-icons.svg#cloud-haze2-fill"
+                        />
+                    </svg>
+                    <span class="title">Weather</span>
+                </a>
+            </div>
+            <div class="search">
+                <form action="#" method="POST">
+                    <input
+                        type="search"
+                        name="search"
+                        id="search"
+                        placeholder="Search location"
+                        autocomplete="off"
+                        spellcheck="false"
+                    />
+                    <button type="submit">
+                        <svg
+                            class="bi"
+                            width="24"
+                            height="24"
+                            fill="currentColor"
+                        >
+                            <use
+                                xlink:href="../node_modules/bootstrap-icons/bootstrap-icons.svg#search"
+                            />
+                        </svg>
+                    </button>
+                </form>
+                <div class="error"></div>
+                <ul class="autocomplete"></ul>
+            </div>
+            <button class="convert-unit">Imperial</button>
+        </header>
+        <main>
+            <div class="loading">
+                <svg class="bi" width="48" height="48" fill="currentColor">
+                    <use
+                        xlink:href="../node_modules/bootstrap-icons/bootstrap-icons.svg#arrow-clockwise"
+                    />
+                </svg>
+            </div>
+            <div class="today">
+                <div>
+                    <div class="location-info tile tile-hide">
+                        <div class="location"></div>
+                        <div class="date"></div>
+                    </div>
+                    <div class="weather tile">
+                        <div class="weather-icon">
+                            <svg
+                                class="bi"
+                                width="48"
+                                height="48"
+                                fill="currentColor"
+                            ></svg>
+                            <div class="temp"></div>
+                        </div>
+                        <div>
+                            <div class="summary"></div>
+                            <div class="feels-like"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="details tile">
+                    <div class="wind">
+                        <div class="direction">
+                            <svg
+                                class="bi"
+                                width="24"
+                                height="24"
+                                fill="currentColor"
+                            >
+                                <use
+                                    xlink:href="../node_modules/bootstrap-icons/bootstrap-icons.svg#arrow-up-circle-fill"
+                                />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="detail-title">Wind</div>
+                            <div class="value"></div>
+                        </div>
+                    </div>
+                    <div class="pressure">
+                        <div class="detail-title">Pressure</div>
+                        <div class="value"></div>
+                    </div>
+                    <div class="humidity">
+                        <div class="detail-title">Humidity</div>
+                        <div class="value"></div>
+                    </div>
+                    <div class="cloud">
+                        <div class="detail-title">Cloudiness</div>
+                        <div class="value"></div>
+                    </div>
+                    <div class="visibility">
+                        <div class="detail-title">Visibility</div>
+                        <div class="value"></div>
+                    </div>
+                    <div class="uv">
+                        <div class="detail-title">UV index</div>
+                        <div class="value"></div>
+                    </div>
+                    <div class="rain">
+                        <div class="detail-title">Chance of rain</div>
+                        <div class="value"></div>
+                    </div>
+                    <div class="sunrise">
+                        <div class="detail-title">Sunrise</div>
+                        <div class="value"></div>
+                    </div>
+                    <div class="sunset">
+                        <div class="detail-title">Sunset</div>
+                        <div class="value"></div>
+                    </div>
+                    <div class="air">
+                        <div class="detail-title">Air quality index</div>
+                        <div class="value"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="forecast">
+                <div class="today-forecast tile"></div>
+                <div class="future-forecast tile"></div>
+            </div>
+        </main>
+        <footer>
+            <div>
+                Powered by
+                <a
+                    href="https://www.weatherapi.com/"
+                    target="_blank"
+                    title="Free Weather API"
+                    >WeatherAPI.com</a
+                >
+            </div>
+            <div>
+                <div class="copyright"></div>
+                <div class="github">
+                    <a href="https://github.com/TITANIUM339" target="_blank">
+                        <svg
+                            class="bi"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                        >
+                            <use
+                                xlink:href="../node_modules/bootstrap-icons/bootstrap-icons.svg#github"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <script>
+            document.querySelector(".copyright").innerHTML =
+                `Copyright &#169; TITANIUM339 ${new Date().getFullYear()}`;
+        </script>
+    </body>
+</html>

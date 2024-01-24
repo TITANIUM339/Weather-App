@@ -1,0 +1,381 @@
+@font-face {
+    font-family: Comfortaa;
+    src: url("./assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --white-shade: #eeeeee;
+    --dark-blue: #053b50;
+    --medium-blue: #176b87;
+    --light-blue: #64ccc5;
+    --transparent-black: rgba(0, 0, 0, 0.5);
+}
+
+body {
+    min-height: 100vh;
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        sans-serif;
+    background: linear-gradient(200deg, var(--light-blue), var(--dark-blue));
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr min-content;
+}
+
+header {
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+:link,
+:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+.title {
+    font-family: Comfortaa;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.search {
+    flex: 0.8;
+    position: relative;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    grid-template-rows: 1fr;
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--transparent-black);
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px var(--transparent-black);
+    margin-bottom: 5px;
+}
+
+form:focus-within {
+    outline: 2px solid white;
+}
+
+input {
+    appearance: none;
+    outline: none;
+    min-width: 140px;
+}
+
+input,
+button {
+    font-family: inherit;
+    border: none;
+    background: none;
+    color: white;
+    font-size: large;
+    font-weight: 500;
+}
+
+.error {
+    font-size: small;
+    font-weight: bold;
+    color: darkred;
+    text-align: center;
+    width: 100%;
+}
+
+.autocomplete {
+    margin-top: 5px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 10px var(--transparent-black);
+    width: 100%;
+    background-color: white;
+    color: black;
+    position: absolute;
+    list-style: none;
+    overflow: hidden;
+    height: min-content;
+    z-index: 1;
+}
+
+.autocomplete > li {
+    padding: 10px;
+}
+
+.autocomplete > li:hover {
+    cursor: pointer;
+    background-color: var(--white-shade);
+}
+
+.convert-unit {
+    background-color: var(--medium-blue);
+    height: 49px;
+    width: 100px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px var(--transparent-black);
+}
+
+.convert-unit:active {
+    background-color: var(--dark-blue);
+}
+
+button {
+    cursor: pointer;
+}
+
+main {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: none;
+}
+
+.rotate {
+    display: block;
+    animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: translate(-50%, 50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, 50%) rotate(359deg);
+    }
+}
+
+.today {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+}
+
+.today > :first-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tile {
+    background-color: var(--transparent-black);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 1px 1px 4px var(--transparent-black);
+    display: none !important;
+}
+
+.tile-show {
+    display: flex !important;
+}
+
+.location-info,
+.weather {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.location,
+.summary {
+    font-size: large;
+    font-weight: bold;
+}
+
+.weather-icon {
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.date,
+.feels-like {
+    color: var(--white-shade);
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    text-align: center;
+}
+
+.details > div {
+    width: 115px;
+}
+
+.detail-title {
+    color: var(--white-shade);
+}
+
+.value {
+    font-size: large;
+    font-weight: bold;
+}
+
+.wind {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.forecast {
+    flex: 1;
+    width: 100%;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content;
+    gap: 20px;
+}
+
+.today-forecast {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+    overflow-x: scroll;
+}
+
+/* width */
+.today-forecast::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.today-forecast::-webkit-scrollbar-track {
+    background: none;
+    border-radius: 10px;
+}
+
+/* Handle */
+.today-forecast::-webkit-scrollbar-thumb {
+    background: var(--medium-blue);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.today-forecast::-webkit-scrollbar-thumb:active {
+    background: var(--dark-blue);
+}
+
+.today-forecast > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.time-stamp {
+    width: max-content;
+}
+
+.future-forecast {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.future-forecast > div {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+}
+
+.future-forecast > div > div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.future-forecast > div > :first-child {
+    width: 120px;
+}
+
+.future-forecast > :last-child {
+    display: none;
+}
+
+.day {
+    font-size: large;
+    font-weight: bold;
+}
+
+.low,
+.high,
+.rain:not(.details > .rain) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+footer > :first-child > :link {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+footer > :last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.github {
+    transition: 200ms;
+    line-height: 0;
+}
+
+.github:hover {
+    transform: scale(1.2);
+}
+
+footer > :first-child {
+    font-size: smaller;
+}
