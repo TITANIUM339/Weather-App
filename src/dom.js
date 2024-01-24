@@ -169,7 +169,7 @@ const displayController = (() => {
         windDirection.title = `Wind direction ${current.wind_degree}°`;
         rain.innerText = `${forecastday[0].day.daily_chance_of_rain}%`;
         cloud.innerText = `${current.cloud}%`;
-        weatherIcon.innerHTML = `<use xlink:href="../node_modules/bootstrap-icons/bootstrap-icons.svg#${getWeatherIcon(current.condition.code, current.is_day)}"/>`;
+        weatherIcon.innerHTML = `<use xlink:href="./assets/images/bootstrap-icons/bootstrap-icons.svg#${getWeatherIcon(current.condition.code, current.is_day)}"/>`;
 
         const sunriseDate = new Date(
             `${forecastday[0].date} ${convertTime12to24(forecastday[0].astro.sunrise)}`,
@@ -224,7 +224,7 @@ const displayController = (() => {
                                 fill="currentColor"
                             >
                                 <use
-                                    xlink:href="../node_modules/bootstrap-icons/bootstrap-icons.svg#${getWeatherIcon(day.condition.code, true)}"
+                                    xlink:href="./assets/images/bootstrap-icons/bootstrap-icons.svg#${getWeatherIcon(day.condition.code, true)}"
                                 />
                             </svg>
                         </div>
@@ -275,7 +275,7 @@ const displayController = (() => {
                                     fill="currentColor"
                                 >
                                     <use
-                                        xlink:href="../node_modules/bootstrap-icons/bootstrap-icons.svg#${getWeatherIcon(hourData.condition.code, hourData.is_day)}"
+                                        xlink:href="./assets/images/bootstrap-icons/bootstrap-icons.svg#${getWeatherIcon(hourData.condition.code, hourData.is_day)}"
                                     />
                                 </svg>
                             </div>
