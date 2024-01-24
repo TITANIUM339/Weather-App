@@ -1,6 +1,6 @@
 const weather = (() => {
     const API_KEY = "9d7c90b5413f4c84a9e94558241001";
-    const BASE_URL = "http://api.weatherapi.com/v1";
+    const BASE_URL = "https://api.weatherapi.com/v1";
 
     async function getAutocomplete(text) {
         try {
