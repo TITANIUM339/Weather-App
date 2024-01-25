@@ -6,6 +6,6 @@ You can search for zip-code, city name, country name etc and get the weather inf
 
 The search bar has autocomplete.
 
-This app is bundled using webpack and uses Bootstrap icons, ESlint, Prettier, and the date-fns library.
+This app is bundled using webpack and uses Bootstrap icons, ESlint, Prettier, the date-fns library, and fetches the weather data from an API.
 
 Live Demo: https://titanium339.github.io/Weather-App/
